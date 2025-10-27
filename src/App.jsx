@@ -1,32 +1,53 @@
-import './App.css'
-
-function FormularioDeEvento(){
-  return(
-    <form className='form-evento'>
-      <h2>Preencha para criar um evento:</h2>
-      <fieldset className='form-campo'>
-        <label>Qual o nome do evento</label>
-        <input type="text" name="nome" />
-      </fieldset>
-    </form>
-  )
-}
+import "./App.css";
+import "./index.css";
+import FormularioDeEvento from "./componentes/FormularioDeEvento";
+import Tema from "./componentes/Tema";
+import Banner from "./componentes/Banner";
 
 function App() {
+  const temas = [
+    {
+      id: 1,
+      nome: "front-end",
+    },
+    {
+      id: 2,
+      nome: "back-end",
+    },
+    {
+      id: 3,
+      nome: "devops",
+    },
+    {
+      id: 4,
+      nome: "inteligência artificial",
+    },
+    {
+      id: 5,
+      nome: "data science",
+    },
+    {
+      id: 6,
+      nome: "cloud",
+    },
+  ];
+
   return (
     <main>
       <header>
         <img src="/logo.png" />
       </header>
 
-      <section>
-        <img src="/banner.png" />
-      </section>
-
       <FormularioDeEvento />
-      
+      <div>
+        {temas.map((item) => (
+          <section key={item.id}>
+            <Tema tema={item} />
+          </section>
+        ))}
+      </div>
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
