@@ -3,6 +3,7 @@ import "./index.css";
 import FormularioDeEvento from "./componentes/FormularioDeEvento";
 import Tema from "./componentes/Tema";
 import Banner from "./componentes/Banner";
+import CardEvento from "./componentes/CardEvento";
 
 function App() {
   const temas = [
@@ -32,6 +33,16 @@ function App() {
     },
   ];
 
+  const eventos = [
+    {
+      id: 1,
+      capa: "https://example.com/react-event.jpg",
+      tema: temas[0],
+      data: new Date(),
+      titulo: "Mulheres no Front",
+    },
+  ];
+
   return (
     <main>
       <header>
@@ -43,6 +54,7 @@ function App() {
         {temas.map((item) => (
           <section key={item.id}>
             <Tema tema={item} />
+            <CardEvento evento={eventos[0]} />
           </section>
         ))}
       </div>
