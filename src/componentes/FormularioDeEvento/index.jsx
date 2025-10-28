@@ -7,7 +7,7 @@ import Label from "../Label";
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 
-function FormularioDeEvento() {
+function FormularioDeEvento({ temas }) {
   return (
     <form className="form-evento">
       <TituloFormulario>Preencha para criar um evento:</TituloFormulario>
@@ -22,13 +22,27 @@ function FormularioDeEvento() {
             music="rock"
           />
         </CampoDeFormulario>
+
+        <CampoDeFormulario>
+          <Label htmlFor="capa">Qual o endereço da capa?</Label>
+          <CampoDeEntrada
+            type="text"
+            id="capa"
+            name="capa"
+            placeholder="http://..."
+          />
+        </CampoDeFormulario>
+
         <CampoDeFormulario>
           <Label htmlFor="dataEvento">Data do evento</Label>
           <CampoDeEntrada type="date" id="dataEvento" name="dataEvento" />
         </CampoDeFormulario>
+
         <CampoDeFormulario>
-          <Label htmlFor="temaEvento">Tema do evento</Label>
-          <ListaSuspensa>Tema do evento</ListaSuspensa>
+          <Label htmlFor="tema">Tema do evento</Label>
+          <ListaSuspensa id="tema" name="tema" itens={temas}>
+            Tema do evento
+          </ListaSuspensa>
         </CampoDeFormulario>
 
         <div className="acoes">
