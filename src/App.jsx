@@ -35,6 +35,8 @@ function App() {
     },
   ];
 
+  // capa do evento 1 ao 15: https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_3.png
+
   const [eventos, setEventos] = useState([
     {
       capa: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png",
@@ -56,20 +58,28 @@ function App() {
       <Banner />
       <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
       <section className="container">
-        {temas.map(function (item) {
+        {temas.map((tema) => {
+          // Verifica se existe algum evento associado a este tema
+          if (!eventos.some((evento) => evento.tema.id === tema.id)) {
+            return null;
+          }
+
           return (
-            <section key={item.id}>
-              <Tema tema={item} />
+            <section key={tema.id}>
+              <Tema tema={tema} />
               <div className="eventos">
-                {eventos.map(function (item, indice) {
-                  return <CardEvento evento={item} key={indice} />;
-                })}
+                {eventos
+                  // Filtra os eventos para incluir apenas os do tema atual
+                  .filter((evento) => evento.tema.id === tema.id)
+                  // Mapeia e renderiza os componentes CardEvento
+                  .map((evento, indice) => (
+                    <CardEvento evento={evento} key={indice} />
+                  ))}
               </div>
             </section>
           );
         })}
       </section>
-      t
     </main>
   );
 }
