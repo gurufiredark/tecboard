@@ -7,9 +7,21 @@ import Label from "../Label";
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 
-function FormularioDeEvento({ temas }) {
+function FormularioDeEvento({ temas, aoSubmeter }) {
+  function aoFormSubmetido(formData) {
+    console.log("Formulário submetido");
+
+    const evento = {
+      capa: formData.get("capa"),
+      tema: temas.find((item) => item.id == formData.get("tema")),
+      data: new Date(formData.get("dataEvento")),
+      titulo: formData.get("nomeEvento"),
+    };
+    aoSubmeter(evento);
+  }
+
   return (
-    <form className="form-evento">
+    <form className="form-evento" action={aoFormSubmetido}>
       <TituloFormulario>Preencha para criar um evento:</TituloFormulario>
       <div className="campos">
         <CampoDeFormulario>
@@ -19,7 +31,6 @@ function FormularioDeEvento({ temas }) {
             id="nomeEvento"
             name="nomeEvento"
             placeholder="Summer dev hits"
-            music="rock"
           />
         </CampoDeFormulario>
 

@@ -7,7 +7,7 @@ function ListaSuspensa({ itens, ...rest }) {
         Selecione o tema
       </option>
       {itens.map((item) => (
-        <option key={item.id} value={item.nome}>
+        <option key={item.id} value={item.id}>
           {item.nome}
         </option>
       ))}
