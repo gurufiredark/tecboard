@@ -1,16 +1,71 @@
-# React + Vite
+# Tecboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Seu hub de eventos de tecnologia! Este projeto foi construído com React e tem como objetivo facilitar a criação e visualização de eventos voltados para temas como Front-end, Back-end, Cloud e muito mais.
 
-Currently, two official plugins are available:
+## 🔨 Funcionalidades do projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Criação de eventos personalizados com imagem, título, data e tema.
+- Organização dos eventos por tema.
+- Persistência dos dados em memória (estado local do React).
 
-## React Compiler
+![Screenshot do projeto](screencapture.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✔️ Técnicas e tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- **React + Vite**: Estrutura leve para desenvolvimento com React.
+- **useState**: Para gerenciamento do estado local dos eventos.
+- **Componentização**: Separação clara de responsabilidades por componente.
+- **Formulários com `FormData`**: Captura de dados estruturada.
+- **CSS Modules**: Estilos organizados por componente com escopo local.
+- **Google Fonts (Work Sans + Orbitron)**: Tipografia personalizada.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Como rodar o projeto
+
+1. Clone o repositório:
+
+```bash
+git https://github.com/seu-usuario/tecboard.git
+cd tecboard
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Rode o projeto localmente:
+
+```bash
+npm run dev
+```
+
+4. Acesse no navegador:
+
+```
+http://localhost:5173
+```
+
+**Imagens disponíveis:**
+
+- `imagem_1.png` até `imagem_15.png`
+- `imagem_extra_1.png` até `imagem_extra_15.png`
+
+**Formato de uso direto no projeto:**
+
+```txt
+https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png
+https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_extra_9.png
+```
+
+## 📚 Sobre o projeto
+
+Esse projeto foi desenvolvido com fins educacionais para praticar:
+
+- Componentização no React.
+- JSX.
+- Manipulação de formulários e dados.
+- Estilização com CSS.
+- Uso de props e renderização condicional.
+
+Vida longa e próspera 🖖
